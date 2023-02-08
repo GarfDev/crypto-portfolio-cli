@@ -19,13 +19,19 @@ CLI supports several commands, each accessible through the `portfolio-cli` comma
 
 Show current value of all tokens in your loaded Portfolio.<br>
 
+Example response: `{"BTC":"$27,844,307,555.14","XRP":"$360,700.86","ETH":"$1,508,361,907.77"}`
+
 ### `portfolio-cli :TOKEN_NAME:` (example: `portfolio-cli ETH`)
 
 Show current value in USD for selected token.
 
+Example response: `$1,509,642,327.85`
+
 ### `portfolio-cli :DATE:` (example: `portfolio-cli 8-2-2023`)
 
 Show value of all tokens until specific date
+
+Example response: `{"BTC":"$27,844,307,555.14","XRP":"$360,700.86","ETH":"$1,508,361,907.77"}`
 
 ### `portfolio-cli load :PATH_TO_PORTFOLIO_CSV:` (example: `portfolio-cli load /Users/user/Projects/portfolio-cli/README.md`)
 
