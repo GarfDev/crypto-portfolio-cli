@@ -1,0 +1,34 @@
+{
+  "name": "portfolio-cli",
+  "version": "0.0.1",
+  "description": "Portfolio Preview CLI",
+  "main": "./lib/index.js",
+  "bin": {
+    "portfolio-cli": "./lib/index.js"
+  },
+  "scripts": {
+    "start": "nodemon --watch 'src/**/*.ts' --exec 'ts-node' src/index.ts",
+    "start:windows": "nodemon --watch 'src/**/*.ts' --exec \"npx ts-node\" src/index.ts",
+    "create": "npm run build && npm run test",
+    "build": "tsc -p .",
+    "local": "sudo npm i -g && portfolio-cli",
+    "refresh": "rm -rf ./node_modules ./package-lock.json && npm install"
+  },
+  "author": "GarfDev",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.3.0",
+    "chalk": "4.1.2",
+    "csv": "^6.2.6",
+    "dotenv": "^16.0.3",
+    "nodemon": "^2.0.20",
+    "sequelize": "^6.28.0",
+    "sqlite3": "^5.1.4",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.9.5"
+  },
+  "devDependencies": {
+    "@types/clear": "^0.1.2",
+    "@types/node": "^18.11.18"
+  }
+}

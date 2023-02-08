@@ -1,0 +1,1 @@
+export const START_OF_TIME = new Date(0)
