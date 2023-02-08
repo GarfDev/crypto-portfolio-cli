@@ -11,6 +11,7 @@
     "start:windows": "nodemon --watch 'src/**/*.ts' --exec \"npx ts-node\" src/index.ts",
     "create": "npm run build && npm run test",
     "build": "tsc -p .",
+    "build:prod": "cp .env ./lib/.env && yarn build",
     "local": "sudo npm i -g && portfolio-cli",
     "refresh": "rm -rf ./node_modules ./package-lock.json && npm install"
   },
