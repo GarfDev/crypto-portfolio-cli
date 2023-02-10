@@ -45,6 +45,20 @@ Load your Portfolio (for faster query in other operations)
 
 3. Test CLI avaibility by typing `portfolio-cli` command in your command-line.
 
+## Technical Desicions
+
+- Why to choose load CSV into sqlite files?
+    + To better performance of later queries, also ORM have good support for Application Architecture.
+- Why we have `model, managers, controller, services` folders?
+    + I want to split logic into different layers
+    + `Models` will hold database logics
+    + `Managers, Services` will hold application logic
+    + Controller will hold busines logics
+- What is `CryptoCompareManager`?
+    + The first rule of `SOLID` is an module should only responsible for an `actor`, `CryptoCompareManager` should only need to modify when CryptoCompare API changed. To achieve that, I also use the `Open-Close Princible`, `CryptoCompareManager` extends from `ConvertManager`, which uniform methods needed for any later converter to develop. Same princible applied for `LoaderManager`, `CSVLoaderManager`.
+- Why `ConvertManager` also extends from `RequestManager`?
+    + `RequestManager` contain enough methods to send external request, so extends make later development easier for developer to know which Manager is able to send external requests
+
 ## Copyright and License Information
 
 Unless otherwise specified, all content, including all source code files and documentation files in this repository are:
